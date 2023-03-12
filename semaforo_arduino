@@ -1,0 +1,42 @@
+// Codigo para simular un semaforo simple con parpadeo de luz verde
+
+void setup() 
+{
+ pinMode(4,OUTPUT); //verde
+ pinMode(3,OUTPUT); //amarillo
+ pinMode(2,OUTPUT); //rojo
+}
+
+void loop()
+{
+  //Etapa 1 Verde ON
+  digitalWrite(4,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(2,LOW);
+  delay(10000);
+  
+  //Etapa 2 Parpadeo verde
+  for(int x=0;x<4;x++)
+  {
+   digitalWrite(4,LOW);
+   delay(500);
+   digitalWrite(4,HIGH);
+   delay(500);
+  }
+  
+  //Etapa 3 Amarillo ON
+  digitalWrite(4,LOW);
+  digitalWrite(3,HIGH);
+  digitalWrite(2,LOW);
+  delay(2000);
+  
+  //Etapa 4 Rojo ON
+  digitalWrite(4,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(2,HIGH);
+  delay(16000);
+  
+}
+
+
+
